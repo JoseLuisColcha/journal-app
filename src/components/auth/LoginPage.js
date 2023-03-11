@@ -8,7 +8,7 @@ export const LoginPage = () => {
 			<form>
 				<input
 					type='text'
-					placeholder='Ingresa un email'
+					placeholder='Email'
 					name='email'
 					className='auth__input'
 					autoComplete='off'
@@ -16,7 +16,7 @@ export const LoginPage = () => {
 
 				<input
 					type='password'
-					placeholder='Ingresa una contraseña'
+					placeholder='Password'
 					name='password'
 					className='auth__input'
 				/>
