@@ -6,13 +6,15 @@ export const JournalEntry = () => {
 				style={{
 					backgroundSize: 'cover',
 					backgroundImage:
-						'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJgZgriAxeXJILn97a50mNY4an6T4Bl9Z3_rX6g0cV&s)',
+						'url(https://earthsky.org/upl/2018/12/comet-wirtanen-Jack-Fusco-dec-2018-Anza-Borrego-desert-CA-e1544613895713.jpg)',
 				}}
 			></div>
 
 			<div className='journal__entry-body'>
-				<p className='journal__entry-title'>Un nuevo dia</p>
-				<p className='journal__entry-content'>Lorem ipsum dolor sit.</p>
+				<p className='journal__entry-title'>Un nuevo día</p>
+				<p className='journal__entry-content'>
+					Reprehenderit id in duis consectetur deserunt veniam fugiat.
+				</p>
 			</div>
 
 			<div className='journal__entry-date-box'>

@@ -1,3 +1,4 @@
+import { NotePage } from '../notes/NotePage'
 import { Sidebar } from './Sidebar'
 
 export const JournalPage = () => {
@@ -5,7 +6,10 @@ export const JournalPage = () => {
 		<div className='journal__main-content'>
 			<Sidebar />
 
-			<main>{/* <NothingSelected /> */}</main>
+			<main>
+				{/* <NothingSelected /> */}
+				<NotePage />
+			</main>
 		</div>
 	)
 }

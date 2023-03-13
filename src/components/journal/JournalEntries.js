@@ -1,4 +1,4 @@
-import { JournalEntry } from './journal/JournalEntry'
+import { JournalEntry } from './JournalEntry'
 
 export const JournalEntries = () => {
 	const entries = [1, 2, 3, 4, 5]

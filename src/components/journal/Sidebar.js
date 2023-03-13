@@ -1,4 +1,4 @@
-import { JournalEntries } from '../JournalEntries'
+import { JournalEntries } from './JournalEntries'
 
 export const Sidebar = () => {
 	return (
@@ -6,7 +6,7 @@ export const Sidebar = () => {
 			<div className='journal__sidebar-navbar'>
 				<h3 className='mt-5'>
 					<i className='far fa-moon'></i>
-					<span> Jose Luis</span>
+					<span> Fernando</span>
 				</h3>
 
 				<button className='btn'>Logout</button>
