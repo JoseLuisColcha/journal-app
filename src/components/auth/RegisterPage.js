@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom'
 import { useForm } from '../../hooks/useForm'
 import validator from 'validator'
+import { useDispatch, useSelector } from 'react-redux'
+import { removeError, setError } from '../../actions/ui'
 
 export const RegisterPage = () => {
+	const dispatch = useDispatch()
+	const { msgError } = useSelector(state => state.ui)
+
 	const [values, handleInputChange] = useForm({
 		name: 'José',
 		email: 'jose.colcha@epn.edu.ec',
@@ -18,22 +23,22 @@ export const RegisterPage = () => {
 		if (isFormValid()) {
 			console.log('Form correct')
 		}
-
-		console.log(name, email, password, password2)
 	}
 
 	const isFormValid = () => {
 		if (name.trim().length === 0) {
-			console.log('Name is required')
+			dispatch(setError('Name is required'))
 			return false
 		} else if (!validator.isEmail(email)) {
-			console.log('Email is not valid')
+			dispatch(setError('Email is not valid'))
 			return false
 		} else if (password !== password2 || password.length < 5) {
-			console.log('Pssword should at least 6 gharacters and match each other')
+			dispatch(
+				setError('Password should at least 6 gharacters and match each other')
+			)
 			return false
 		}
-
+		dispatch(removeError())
 		return true
 	}
 
@@ -42,7 +47,8 @@ export const RegisterPage = () => {
 			<h3 className='auth__title'>Register</h3>
 
 			<form onSubmit={handleRegister}>
-				<div className='auth__alert-error'>Hola mundo</div>
+				{msgError && <div className='auth__alert-error'>{msgError}</div>}
+
 				<input
 					type='text'
 					placeholder='Name'
@@ -52,7 +58,6 @@ export const RegisterPage = () => {
 					value={name}
 					onChange={handleInputChange}
 				/>
-
 				<input
 					type='text'
 					placeholder='Email'
@@ -62,7 +67,6 @@ export const RegisterPage = () => {
 					value={email}
 					onChange={handleInputChange}
 				/>
-
 				<input
 					type='password'
 					placeholder='Password'
@@ -72,7 +76,6 @@ export const RegisterPage = () => {
 					value={password}
 					onChange={handleInputChange}
 				/>
-
 				<input
 					type='password'
 					placeholder='Confirm password'
@@ -82,11 +85,9 @@ export const RegisterPage = () => {
 					value={password2}
 					onChange={handleInputChange}
 				/>
-
 				<button type='submit' className='btn btn-primary btn-block mb-5'>
 					Register
 				</button>
-
 				<Link to='/auth/login'>Already registered?</Link>
 			</form>
 		</>
