@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { startGoogleLogin, startLoginEmailPassword } from '../../actions/auth'
 
 export const LoginPage = () => {
-	
 	const dispatch = useDispatch()
 	const { loading } = useSelector(state => state.ui)
 
