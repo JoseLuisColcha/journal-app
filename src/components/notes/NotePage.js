@@ -8,7 +8,6 @@ export const NotePage = () => {
 	const { active: note } = useSelector(state => state.notes)
 
 	const [values, handleInputChange, reset] = useForm(note)
-	console.log(values)
 	const { body, title } = values
 
 	const activeId = useRef(note.id)
@@ -49,12 +48,7 @@ export const NotePage = () => {
 				></textarea>
 
 				<div className='notes__image'>
-					{note.url && (
-						<img
-							src='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg'
-							alt='imagen'
-						/>
-					)}
+					{note.url && <img src={note.url} alt='imagen' />}
 				</div>
 			</div>
 		</div>
