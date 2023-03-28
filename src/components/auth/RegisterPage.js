@@ -47,7 +47,10 @@ export const RegisterPage = () => {
 		<>
 			<h3 className='auth__title'>Register</h3>
 
-			<form onSubmit={handleRegister}>
+			<form
+				onSubmit={handleRegister}
+				className='animate__animated animate__fadeIn animate__faster'
+			>
 				{msgError && <div className='auth__alert-error'>{msgError}</div>}
 
 				<input
@@ -73,7 +76,7 @@ export const RegisterPage = () => {
 					placeholder='Password'
 					name='password'
 					className='auth__input'
-					autoComplete='off'
+					autoComplete='on'
 					value={password}
 					onChange={handleInputChange}
 				/>
@@ -82,7 +85,7 @@ export const RegisterPage = () => {
 					placeholder='Confirm password'
 					name='password2'
 					className='auth__input'
-					autoComplete='off'
+					autoComplete='on'
 					value={password2}
 					onChange={handleInputChange}
 				/>
