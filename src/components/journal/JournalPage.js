@@ -6,9 +6,8 @@ import { Sidebar } from './Sidebar'
 export const JournalPage = () => {
 	const { active } = useSelector(state => state.notes)
 
-	
 	return (
-		<div className='journal__main-content'>
+		<div className='journal__main-content animate__animated animate__fadeIn animate__faster'>
 			<Sidebar />
 
 			<main>{active ? <NotePage /> : <NothingSelected />}</main>

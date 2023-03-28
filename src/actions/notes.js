@@ -87,7 +87,7 @@ export const startUploading = file => {
 			title: 'Uploading...',
 			text: 'Please wait...',
 			allowOutsideClick: false,
-			onBeforeOpen: () => {
+			didOpen: () => {
 				Swal.showLoading()
 			},
 		})
@@ -107,6 +107,20 @@ export const startDeleting = id => {
 		await db.doc(`${uid}/journal/notes/${id}`).delete()
 
 		dispatch(deleteNote(id))
+
+		Swal.fire({
+			title: 'Are you sure?',
+			text: "You won't be able to revert this!",
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes, delete it!',
+		}).then(result => {
+			if (result.isConfirmed) {
+				Swal.fire('Deleted!', 'Your file has been deleted.', 'success')
+			}
+		})
 	}
 }
 

@@ -20,7 +20,10 @@ export const JournalEntry = props => {
 	}
 
 	return (
-		<div className='journal__entry pointer' onClick={handleEntryClick}>
+		<div
+			className='journal__entry pointer animate__animated animate__fadeInDown animate__faster'
+			onClick={handleEntryClick}
+		>
 			{url && (
 				<div
 					className='journal__entry-picture'
